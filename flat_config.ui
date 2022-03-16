@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FlatEffectConfigForm</class>
+ <widget class="QWidget" name="FlatEffectConfigForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>595</width>
+    <height>441</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="layout_FlatPath">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_FlatPath">
+       <property name="text">
+        <string>Flat Image Path:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="kcfg_FlatPath">
+       <property name="toolTip">
+        <string>The path to the flat calibration image file.</string>
+       </property>
+       <property name="statusTip">
+        <string>Flat calibration file</string>
+       </property>
+       <property name="whatsThis">
+        <string>Flat calibration file</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_FlatOffset">
+       <property name="text">
+        <string>Flat offset:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="kcfg_FlatOffset">
+       <property name="toolTip">
+        <string>An offset value to be added to the input image.</string>
+       </property>
+       <property name="statusTip">
+        <string>Flat offset</string>
+       </property>
+       <property name="whatsThis">
+        <string>Flat offset</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_Strength">
+       <property name="text">
+        <string>Flat strength:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="kcfg_Strength">
+       <property name="toolTip">
+        <string>Correction amplification. If the calibration image was acquired correctly it should be left at 1.</string>
+       </property>
+       <property name="statusTip">
+        <string>Flat strength</string>
+       </property>
+       <property name="whatsThis">
+        <string>Flat strength</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_Gain">
+       <property name="text">
+        <string>Global gain:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="kcfg_Gain">
+       <property name="toolTip">
+        <string>Global gain post calibration. Lower to preserve white uniformity.</string>
+       </property>
+       <property name="statusTip">
+        <string>Gain</string>
+       </property>
+       <property name="whatsThis">
+        <string>Gain</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Activation</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0" colspan="2">
+       <widget class="KShortcutsEditor" name="shortcutEditor">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KShortcutsEditor</class>
+   <extends>QWidget</extends>
+   <header>kshortcutseditor.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>kcfg_FlatPath</tabstop>
+  <tabstop>kcfg_FlatOffset</tabstop>
+  <tabstop>kcfg_Strength</tabstop>
+  <tabstop>kcfg_Gain</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

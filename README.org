@@ -1,0 +1,14 @@
+* Kwin flat field calibration effect
+Applies flat field calibration to the desktop, correcting screen non-uniformities to get an accurate display. Requires measurement of the screen characteristics, which must be provided as an image. Proper acquisition of this calibration image is critical for the success of the calibration process.
+
+** Default Shortcuts
+- Toggle flat calibration ::
+=SHIFT + CTRL + META + F=  
+
+You can change the shortcuts via System Settings -> Global Keyboard Shortcuts -> KWin
+Or directly from the kwin effects settings menu.
+
+** Acknowledgements
+
+Loosely based on savnk's smart invert effect, which was used as template for the project. Much appreciated.
+

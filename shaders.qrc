@@ -1,0 +1,9 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/effect-shaders-1.10">
+  <file alias="flat.frag">data/1.10/flat.frag</file>
+</qresource>
+<qresource prefix="/effect-shaders-1.40">
+  <file alias="flat.frag">data/1.40/flat.frag</file>
+</qresource>
+</RCC>
+

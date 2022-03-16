@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+    <kcfgfile arg="true"/>
+    <group name="Effect-FlatCalibration">
+        <entry name="FlatOffset" type="double" min="-1.0" max="1.0">
+            <label>Value to add to the calibration image</label>
+            <default>0.000001</default>
+        </entry>
+        <entry name="Strength" type="double" min="0.0" max="4.0">
+            <label>Amplitude of the calibration image</label>
+            <default>1.0</default>
+        </entry>
+        <entry name="Gain" type="double" min="0.25" max="2.0">
+            <label>Uniform gain post calibration (lower to preserve white flatness)</label>
+            <default>1.0</default>
+        </entry>
+        <entry name="FlatPath" type="string">
+            <label>Flat calibration image</label>
+            <default></default>
+        </entry>
+    </group>
+</kcfg>
