@@ -4,6 +4,8 @@ uniform sampler2D correction;
 uniform vec4 modulation;
 uniform vec2 inv_screenres;
 uniform float gain;
+uniform float offset;
+uniform float strength;
 uniform float saturation;
 
 in vec2 texcoord0;

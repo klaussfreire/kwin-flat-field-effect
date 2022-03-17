@@ -1,3 +1,4 @@
+
 uniform sampler2D sampler;
 uniform sampler2D correction;
 uniform vec4 modulation;
@@ -8,6 +9,8 @@ uniform float strength;
 uniform float saturation;
 
 varying vec2 texcoord0;
+
+
 
 float rand(vec2 co)
 {

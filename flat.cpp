@@ -68,7 +68,12 @@ namespace KWin
 
   bool FlatCalibrationEffect::supported()
   {
+#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
     return effects->compositingType() == OpenGL2Compositing;
+#else
+    std::cout <<  (effects->compositingType() == OpenGLCompositing) << std::endl;
+    return effects->compositingType() == OpenGLCompositing;
+#endif
   }
 
   void FlatCalibrationEffect::reconfigure(ReconfigureFlags)
@@ -142,7 +147,7 @@ namespace KWin
 
       data.shader = shader;
 
-      updateShader();
+      updateShader(w->screen());
     }
 
     effects->drawWindow(w, mask, region, data);
@@ -158,7 +163,7 @@ namespace KWin
       frame->setShader(m_shader);
       ShaderBinder binder(m_shader);
 
-      updateShader();
+      updateShader(nullptr);
 
       effects->paintEffectFrame(frame, region, opacity, frameOpacity);
     } else {
@@ -183,15 +188,16 @@ namespace KWin
     return f == ScreenInversion;
   }
 
-  void FlatCalibrationEffect::updateShader()
+  void FlatCalibrationEffect::updateShader(EffectScreen *screen)
   {
-    QRect rec = QApplication::desktop()->screenGeometry();
-
     m_shader->setUniform(m_gain_loc, (float)gain());
     m_shader->setUniform(m_offset_loc, (float)offset());
     m_shader->setUniform(m_strength_loc, 1.0f / (float)strength());
-    m_shader->setUniform(m_inv_screenres_loc, QVector2D(
-        (float)(1.0 / rec.width()), (float)(1.0 / rec.height())));
+    if (screen != nullptr) {
+	QRect rec = screen->geometry();
+        m_shader->setUniform(m_inv_screenres_loc, QVector2D(
+            (float)(1.0 / rec.width()), (float)(1.0 / rec.height())));
+    }
     m_shader->setUniform(m_correction_loc, 1);
 
     glActiveTexture(GL_TEXTURE0 + 1);

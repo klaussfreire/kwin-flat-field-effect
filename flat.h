@@ -65,7 +65,7 @@ public Q_SLOTS:
 
 protected:
     bool loadData();
-    void updateShader();
+    void updateShader(EffectScreen *screen);
 
 private:
     bool m_inited;
