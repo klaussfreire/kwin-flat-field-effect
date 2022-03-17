@@ -46,7 +46,7 @@ void main()
 
     // Add some random noise to prevent quantization aliasing
     tex.rgb *= lcorr * gain;
-    tex.rgb = to_srgb(tex.rgb) + rand(gl_FragCoord.xy) * 0.004;
+    tex.rgb = to_srgb(tex.rgb) + (rand(gl_FragCoord.xy) - 0.5) * 0.004;
 
     gl_FragColor = tex;
 }
